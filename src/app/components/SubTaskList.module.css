@@ -1,0 +1,122 @@
+.container {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--subtask-border);
+}
+
+.toggle {
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.2px;
+}
+
+.toggle:hover {
+  text-decoration: underline;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.itemLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.title {
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+.titleCompleted {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: var(--font-inter), sans-serif;
+  padding: 0;
+}
+
+.deleteBtn:hover {
+  text-decoration: underline;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.input {
+  flex: 1;
+  padding: 7px 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: var(--font-inter), sans-serif;
+  outline: none;
+  background: var(--input-bg);
+  color: var(--text);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s;
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.addBtn {
+  padding: 7px 14px;
+  background: linear-gradient(135deg, #6c63ff, #574fd6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.addBtn:hover {
+  opacity: 0.9;
+}

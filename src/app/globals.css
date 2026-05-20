@@ -1,49 +1,82 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
 body {
-  max-width: 100vw;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: color 0.3s;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body.light {
+  --bg: #f0f0f7;
+  --text: #1a1a2e;
+  --card: rgba(255, 255, 255, 0.75);
+  --border: rgba(108, 99, 255, 0.15);
+  --input-border: rgba(108, 99, 255, 0.25);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --muted: #888;
+  --accent: #6c63ff;
+  --accent-hover: #574fd6;
+  --danger: #ff4d4f;
+  --subtask-border: rgba(108, 99, 255, 0.15);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+body.dark {
+  --bg: #0d0d1a;
+  --text: #e0e0e0;
+  --card: rgba(22, 33, 62, 0.75);
+  --border: rgba(108, 99, 255, 0.2);
+  --input-border: rgba(108, 99, 255, 0.3);
+  --input-bg: rgba(15, 52, 96, 0.4);
+  --muted: #888;
+  --accent: #6c63ff;
+  --accent-hover: #574fd6;
+  --danger: #ff4d4f;
+  --subtask-border: rgba(108, 99, 255, 0.2);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@keyframes aurora {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-size: 400% 400%;
+  animation: aurora 15s ease infinite;
+  opacity: 0.85;
+}
+
+body.light::before {
+  background: linear-gradient(
+    135deg,
+    #f0f0f7,
+    #e8e0ff,
+    #dff0ff,
+    #f0ffe8,
+    #fff0f8,
+    #f0f0f7
+  );
+}
+
+body.dark::before {
+  background: linear-gradient(
+    135deg,
+    #0d0d1a,
+    #1a0d2e,
+    #0d1a2e,
+    #0d2e1a,
+    #2e0d1a,
+    #0d0d1a
+  );
 }
