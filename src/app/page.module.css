@@ -11,6 +11,12 @@
   margin-bottom: 6px;
 }
 
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .title {
   font-size: 2.2rem;
   font-weight: 700;
@@ -23,6 +29,12 @@
   color: var(--muted);
   margin-bottom: 32px;
   letter-spacing: 0.2px;
+}
+
+.userName {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-weight: 500;
 }
 
 .themeButton {
@@ -43,4 +55,22 @@
   background: linear-gradient(135deg, #2418f9, #2015b0);
   color: #fff;
   border-color: #2418f9;
+}
+
+.logoutButton {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 7px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  background: var(--danger);
+  color: #fff;
 }
